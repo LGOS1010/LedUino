@@ -1,0 +1,30 @@
+package com.example.leduino;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    float tensaoled;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+public void calcula(float volt)
+{
+    tensaoled=volt;
+}
+    public void calcular(View v){
+
+
+
+        TextView resultado = (TextView)findViewById(R.id.resultado);
+        EditText txt1 = (EditText) findViewById(R.id.txt1);
+        float fonte = Float.parseFloat(txt1.getText().toString());
+        double resistor=(fonte-tensaoled)/0.02;
+        resultado.setText(String.valueOf(resistor));
+    }
+}
