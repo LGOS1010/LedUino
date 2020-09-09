@@ -19,8 +19,6 @@ public void calcula(float volt)
 }
     public void calcular(View v){
 
-
-
         TextView resultado = (TextView)findViewById(R.id.resultado);
         EditText txt1 = (EditText) findViewById(R.id.txt1);
         float fonte = Float.parseFloat(txt1.getText().toString());
